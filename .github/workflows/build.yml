@@ -34,17 +34,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install flet
 
-      - name: Crear estructura de Flutter para Flet
+      - name: Construir APK de Flet
         run: |
-          flet pack main.py --pirate
-
-      - name: Construir APK con Flutter
-        run: |
-          cd build
-          flutter build apk --release
+          flet build apk
 
       - name: Subir APK generado
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: build/apk/*.apk
