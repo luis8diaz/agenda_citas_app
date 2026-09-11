@@ -17,7 +17,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Configurar Flutter SDK (Versión exacta requerida por Flet)
+      - name: Configurar Flutter SDK
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.44.8'
@@ -34,9 +34,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install flet
 
-      - name: Construir APK de Flet sin interrupciones
+      - name: Construir APK apuntando al main.py real
         run: |
-          flet build apk --yes
+          flet build apk main.py --yes
 
       - name: Subir APK generado
         uses: actions/upload-artifact@v4
