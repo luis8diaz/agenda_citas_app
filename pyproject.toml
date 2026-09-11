@@ -5,7 +5,7 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-    { name = "Flet developer", email = "you@example.com" }
+    { name = "Luis Diaz", email = "you@example.com" }
 ]
 dependencies = [
     "flet>=0.86.5"
@@ -26,10 +26,10 @@ asyncio_mode = "auto"
 testpaths = ["tests"]
 
 [tool.flet]
-org = "com.mycompany"
+org = "com.luisdiaz"
 product = "agenda-citas-app"
-company = "Flet"
-copyright = "Copyright (C) 2023-2026 by Flet"
+company = "Luis Diaz"
+copyright = "Copyright (C) 2026 Luis Diaz"
 
 [tool.flet.app]
-path = "src"
+path = "main.py"
