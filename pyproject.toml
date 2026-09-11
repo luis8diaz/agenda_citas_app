@@ -23,6 +23,3 @@ org = "com.luisdiaz"
 product = "agenda-citas-app"
 company = "Luis Diaz"
 copyright = "Copyright (C) 2026 Luis Diaz"
-
-[tool.flet.app]
-path = "main.py"
