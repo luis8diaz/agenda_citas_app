@@ -8,7 +8,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java (Requerido para Android)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Configurar Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.x'
+          channel: 'stable'
+          cache: true
 
       - name: Configurar Python
         uses: actions/setup-python@v5
@@ -20,11 +34,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install flet
 
-      - name: Construir APK
+      - name: Construir APK de Flet
         run: flet build apk
 
-      - name: Subir APK
+      - name: Subir APK generado
         uses: actions/upload-artifact@v4
         with:
-          name: apk-output
+          name: app-release-apk
           path: build/apk/*.apk
