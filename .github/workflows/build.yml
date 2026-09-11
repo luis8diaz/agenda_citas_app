@@ -23,7 +23,7 @@ jobs:
 
       - name: Construir APK de Flet
         run: |
-          flet build apk --project-name "Agenda Citas Pro"
+          flet build apk
 
       - name: Guardar APK generado
         uses: actions/upload-artifact@v4
